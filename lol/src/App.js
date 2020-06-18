@@ -1,19 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
-function App() {
-    const [posts, setPosts] = useState([]);
-    useEffect(() => {
-        axios
-            .get("https://kr.api.riotgames.com/tft/league/v1/challenger?api_key=RGAPI-1518764a-d149-4ec5-a36c-b39cfd0a5f5c")
-            .then(response => console.log(response));
-    });
+
+export default function App() {
+
+    const [posts, setPosts] = useState({})
     
-    return <div></div>;
+    async function fetchData(){ 
+        const res = await fetch ("https://kr.api.riotgames.com/tft/league/v1/entries/DIAMOND/I?page=1&api_key=RGAPI-51faaa6c-94c7-4631-a2e5-ed1616a47bfd")
+        const data = await res.json()
+        setPosts(data)
 }
+            
+useEffect(() => {
+    fetchData()
+}, [])
+    
+console.log(posts); 
 
-
-
-
-
-export default App;
+    return (
+    <div>
+        <h4>{posts.leagueId}</h4>
+    </div>
+    );
+}
