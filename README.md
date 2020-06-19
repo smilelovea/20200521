@@ -15,3 +15,8 @@
   + league-v1 탭에서 받은 summonerId를 이용해 summoner-v1 탭의 /tft/summoner/v1/summoners/{encryptedSummonerId}에서 puuid를 가져옴  
   + match-v1탭에서 /tft/match/v1/matches/by-puuid/{puuid}/ids 에 puuid를 입력 하여 match list 를 가져옴
   + 같은 탭의 /tft/match/v1/matches/{matchId} 에 match list를 넣어 매치 기록을 가져옴
+
+  #### 개발 환경
+  - Framework : React,Node.js
+  - Language : javascript 
+
