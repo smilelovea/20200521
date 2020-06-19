@@ -7,7 +7,7 @@ export default function App() {
     const [posts, setPosts] = useState({})
     
     async function fetchData(){ 
-        const res = await fetch ("https://kr.api.riotgames.com/tft/league/v1/entries/DIAMOND/I?page=1&api_key=RGAPI-51faaa6c-94c7-4631-a2e5-ed1616a47bfd")
+        const res = await fetch ("https://kr.api.riotgames.com/tft/league/v1/entries/DIAMOND/I?page=1&api_key=RGAPI-9e164cdc-6b6f-4108-a974-f82c83c8fff6")
         const data = await res.json()
         setPosts(data)
 }
@@ -24,3 +24,5 @@ console.log(posts);
     </div>
     );
 }
+
+
