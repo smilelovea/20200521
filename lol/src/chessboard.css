@@ -1,5 +1,16 @@
 .box {
     height: 100px;
     width: 100px;
+    border: solid 5px white;
     background-color: black;
 }
+
+.holder {
+    height: 110px;
+    width: 110px;
+    margin: 10px;
+    border: solid 5px black;
+    background-color: white;
+    display: inline-block;
+}
+

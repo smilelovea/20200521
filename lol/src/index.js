@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Chessboard from './chessboard';
 
 
-ReactDOM.render(<App />,document.getElementById('root'));
+ReactDOM.render(<Chessboard />,document.getElementById('root'));
 
