@@ -11,14 +11,10 @@ return (
         <div className="box" draggable="true"> </div>
     </div>
 <div className="holder"></div>
+<div className="holder"></div>
+<div className="holder"></div>
 </div>
 ) }
-
-const box = document.querySelector('.box');
-const holders = document.querySelector('.holder');
-
-box.addEventListener('dragstart', dragStart);
-box.addEventListener('dragend',dragEnd);
 
 
 
