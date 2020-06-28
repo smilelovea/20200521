@@ -4,4 +4,3 @@ import Chessboard from './chessboard';
 
 
 ReactDOM.render(<Chessboard />,document.getElementById('root'));
-
