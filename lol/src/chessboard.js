@@ -16,7 +16,24 @@ return (
 </div>
 ) }
 
+var dragged;
 
+document.addEventListener("drag", function(event){});
 
+document.addEventListener("dragstart",function(event) {
+    dragged = event.target;
+});
 
-export default chessboard;
+document.addEventListener("dragover",function(event){
+    event.preventDefault();
+});
+
+document.addEventListener("drop",function(event){
+    event.preventDefault();
+    if (event.target.className == "holder") {
+        dragged.parentNode.removeChild(dragged);
+        event.target.appendChild(dragged);
+    }
+});
+
+ export default chessboard; 
