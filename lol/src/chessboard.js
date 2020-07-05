@@ -16,13 +16,7 @@ return (
 </div>
 ) }
 
-function allowDrop(ev){
-    ev.preventDefault();
-}
 
-function drag(ev){
-    ev.dataTransfer.setData("text/plain",ev.target.id);
-}
 
 
 export default chessboard;
