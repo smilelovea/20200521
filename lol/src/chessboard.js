@@ -44,18 +44,20 @@ document.addEventListener("drop",function(event){
 
  function onDragStart(event) {
      event.dataTransfer.setData('text/plain', event.target.id);
+      
  }
 
  function onDragOver(event){
      event.preventDefault();
+     
  }
 
+ 
  function onDrop(event){
+    event.preventDefault();
     const id = event.dataTransfer.getData('text'); 
-    const elBox = document.getElementById(id);
-    const elHolder = event.target;
-
-    elHolder.appendChild(elBox);
-    event.dataTransfer.clearData();
+    event.target.appendChild(document.getElementById(id));
+      
  }
+
 export default chessboard; 
