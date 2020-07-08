@@ -7,16 +7,20 @@ import './chessboard.css';
 function chessboard() {
 return (
 <div className="container">
-    <div className="holder">
-        <div className="box" draggable="true" id="1"> </div>
+    <div className="holder" ondragover = "onDragOver(event);"
+        ondrop = "onDrop(event);">
+        <div className="box" 
+            draggable="true" 
+            id="1"
+            ondragstart = 'onDragStart(event);'> </div>
     </div>
-<div className="holder"></div>
-<div className="holder"></div>
-<div className="holder"></div>
+<div className="holder" ondragover = "onDragOver(event);" ondrop = "onDrop(event);"></div>
+<div className="holder" ondragover = "onDragOver(event);" ondrop = "onDrop(event);"></div>
+<div className="holder" ondragover = "onDragOver(event);" ondrop = "onDrop(event);"></div>
 </div>
 ) }
 
-var dragged;
+/* var dragged;
 
 document.addEventListener("drag", function(event){});
 
@@ -34,6 +38,24 @@ document.addEventListener("drop",function(event){
         dragged.parentNode.removeChild(dragged);
         event.target.appendChild(dragged);
     }
-});
+}); */
 
- export default chessboard; 
+ 
+
+ function onDragStart(event) {
+     event.dataTransfer.setData('text/plain', event.target.id);
+ }
+
+ function onDragOver(event){
+     event.preventDefault();
+ }
+
+ function onDrop(event){
+    const id = event.dataTransfer.getData('text'); 
+    const elBox = document.getElementById(id);
+    const elHolder = event.target;
+
+    elHolder.appendChild(elBox);
+    event.dataTransfer.clearData();
+ }
+export default chessboard; 
