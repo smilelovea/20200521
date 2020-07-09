@@ -7,12 +7,12 @@ import './chessboard.css';
 function chessboard() {
 return (
 <div className="container">
-    <div className="holder" ondragover = "onDragOver(event);"
-        ondrop = "onDrop(event);">
+    <div className="holder" ondragover = "onDragOver(event);" ondrop = "onDrop(event);">
         <div className="box" 
             draggable="true" 
             id="1"
-            ondragstart = 'onDragStart(event);'> </div>
+            ondragstart = "onDragStart(event);"> 
+        </div>
     </div>
 <div className="holder" ondragover = "onDragOver(event);" ondrop = "onDrop(event);"></div>
 <div className="holder" ondragover = "onDragOver(event);" ondrop = "onDrop(event);"></div>
@@ -41,16 +41,16 @@ document.addEventListener("drop",function(event){
 }); */
 
  
+ function onDragOver(event){
+     event.preventDefault();
+     
+ }
 
  function onDragStart(event) {
      event.dataTransfer.setData('text/plain', event.target.id);
       
  }
 
- function onDragOver(event){
-     event.preventDefault();
-     
- }
 
  
  function onDrop(event){
