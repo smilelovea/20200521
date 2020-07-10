@@ -60,4 +60,5 @@ document.addEventListener("drop",function(event){
       
  }
 
+ 
 export default chessboard; 
