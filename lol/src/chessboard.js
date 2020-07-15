@@ -19,7 +19,7 @@ return (
     event.preventDefault();
     const id = event.dataTransfer.getData('text');
     event.target.appendChild(document.getElementById(id));
- }
+ };
 
  
 export default chessboard; 

@@ -1,16 +1,22 @@
   
 .box {
-    height: 100px;
-    width: 100px;
+    height: 40px;
+    width: 76px;
     border: solid 5px white;
     background-color: black;
 }
 
 .holder {
-    height: 110px;
-    width: 110px;
-    margin: 10px;
+    height: 48.5px;
+    width: 84px;
+    margin: 24.25px;
+    background-size: auto 87.7572px;
     border: solid 5px black;
     background-color: white;
     display: inline-block;
+}
+
+.container {
+   width: 656px;
+   height: 388px; 
 }
