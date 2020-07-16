@@ -18,7 +18,7 @@ return (
  const onDrop_handler = event => {
     event.preventDefault();
     const id = event.dataTransfer.getData('text');
-    event.target.appendChild(document.getElementById(id));
+    event.target.append(document.getElementById(id));
  };
 
  
