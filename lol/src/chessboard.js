@@ -19,7 +19,12 @@ return (
  const onDrop_handler = dropevent => {
     dropevent.preventDefault();
     const data = dropevent.dataTransfer.getData('text');
-    dropevent.target.appendChild(document.getElementById(data));
+    const id = document.getElementById(data);
+    
+    var a = document.createElement("div");
+    a.innerHTML = document.getElementById(data);
+
+    dropevent.target.appendChild(a);
     
  };
 
