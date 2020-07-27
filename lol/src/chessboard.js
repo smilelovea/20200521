@@ -16,17 +16,12 @@ return (
 )}
 
 
- const onDrop_handler = dropevent => {
-    dropevent.preventDefault();
-    const data = dropevent.dataTransfer.getData('text');
-    const id = document.getElementById(data);
-    
-    var a = document.createElement("div");
-    a.innerHTML = document.getElementById(data);
-
-    dropevent.target.appendChild(a);
-    
+ const onDrop_handler = event => {
+    event.preventDefault();
+    const id = event.dataTransfer.getData('text');
+    event.target.appendChild(document.createTextNode(document.getElementById(id)));
  };
+
 
  
 export default chessboard; 
