@@ -13,13 +13,16 @@ return (
             </div>
         ))}
     </div>
+ 
 )}
 
 
  const onDrop_handler = event => {
     event.preventDefault();
     const id = event.dataTransfer.getData('text');
-    event.target.appendChild(document.createTextNode(document.getElementById(id)));
+    if(id ==! null){
+    event.target.append(document.getElementById(id))}
+    
  };
 
 
