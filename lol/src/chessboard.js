@@ -25,9 +25,11 @@ return (
     
  };
 
-const holder = document.getElementsByClassName("holder");
 
+const holder = document.getElementsByClassName("holder");
 console.log(holder);
+
+
  
 
 export default chessboard; 
