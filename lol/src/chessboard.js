@@ -20,7 +20,7 @@ return (
  const onDrop_handler = event => {
     event.preventDefault();
     const id = event.dataTransfer.getData('text');
-    if(id ==! null){
+    if(id){
     event.target.append(document.getElementById(id))}
     
  };
