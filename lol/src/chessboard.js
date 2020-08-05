@@ -21,6 +21,7 @@ return (
     event.preventDefault();
     const data = event.dataTransfer.getData('text');
     console.log(data);
+    
     if (data) {
         event.target.append(document.getElementById(data))
     }
