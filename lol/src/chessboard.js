@@ -9,13 +9,17 @@ return (
     <div className="container">
         {Array(28).fill().map((_,i) => (
             <div className="holder" onDragOver = {event => event.preventDefault()} onDrop = {event => onDrop_handler(event)} key={i}>
-                {i <= 1 ? <div className="box" draggable="true" onDrop = "return false" id={i} onDragStart = {event => event.dataTransfer.setData('text', event.target.id)}></div> : ''}
+                {i <= 1 ? <div className="box" draggable="true" onDrop = {onDrop_prevent} id={i} onDragStart = {event => event.dataTransfer.setData('text', event.target.id)}></div> : ''}
             </div>
         ))}
     </div>
  
 )}
 
+const onDrop_prevent = event => {
+    event.preventDefault();
+    event.stopPropagation();
+}
 
  const onDrop_handler = event => {
     event.preventDefault();
