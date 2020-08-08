@@ -8,8 +8,10 @@ function chessboard() {
 return (
     <div className="container">
         {Array(28).fill().map((_,i) => (
-            <div className="holder" onDragOver = {event => event.preventDefault()} onDrop = {event => onDrop_handler(event)} key={i}>
-                {i <= 1 ? <div className="box" draggable="true" onDrop = {onDrop_prevent} id={i} onDragStart = {event => event.dataTransfer.setData('text', event.target.id)}></div> : ''}
+            <div className="holder" onDragOver = {event => event.preventDefault()} 
+                 onDrop = {event => onDrop_handler(event)} key={i}>
+                {i <= 1 ? <div className="box" draggable="true" onDrop = {onDrop_prevent} 
+                            id={i} onDragStart = {event => event.dataTransfer.setData('text', event.target.id)}></div> : ''}
             </div>
         ))}
     </div>
@@ -25,7 +27,9 @@ const onDrop_prevent = event => {
     event.preventDefault();
     const data = event.dataTransfer.getData('text');
     console.log(data);
-    
+    console.log(event.currentTarget.firstElementChild); // 겹쳐진 box중 아래에 있는 box(원래 있던 box)
+  
+
     if (data) {
         event.target.append(document.getElementById(data))
     }
