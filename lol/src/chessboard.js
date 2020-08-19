@@ -9,9 +9,9 @@ return (
     <div className="container">
         {Array(28).fill().map((_,i) => (
             <div className="holder" onDragOver = {event => event.preventDefault()} 
-                 onDrop = {event => onDrop_handler(event)} key={i}>
+                 onDrop = {event => onDrop_handler(event)} key={i}  >
                 {i <= 1 ? <div className="box" draggable="true" onDrop = {onDrop_prevent} 
-                            id={i} onDragStart = {event => event.dataTransfer.setData('text', event.target.id)}></div> : ''}
+                                id={i} onDragStart = {event => event.dataTransfer.setData('text', event.target.id)}> </div> : ''}
             </div>
         ))}
     </div>
@@ -35,14 +35,15 @@ const onDrop_prevent = event => {
     if (data) {
         event.target.append(document.getElementById(data))
     }
+    };
 
 
- };
+ 
 
 
-const holder = document.getElementsByClassName("holder");
+
+const holder = document.querySelectorAll(".holder");
 console.log(holder);
-
 
  
 
