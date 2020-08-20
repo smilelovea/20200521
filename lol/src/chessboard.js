@@ -12,7 +12,7 @@ return (
                  onDrop = {event => onDrop_handler(event)} key={i}  >
                 {i <= 1 ? <div className="box" draggable="true" onDrop = {onDrop_prevent} 
                 id={i} onDragStart = {event => event.dataTransfer.setData('text', event.target.id)}
-                 onDragEnter = {dragEnter_handler} onDragLeave = {dragLeave_handler}> </div> : ''}
+                 /*onDragEnter = {dragEnter_handler(holder)} onDragLeave = {dragLeave_handler(holder)}*/> </div> : ''}
             </div>
         ))}
     </div>
@@ -40,6 +40,7 @@ const onDrop_prevent = event => {
 const holder = document.querySelector(".holder");
 console.log(holder);
 
+/* 
 const dragEnter_handler = event => {
     event.classList.add('over');
 }
@@ -47,7 +48,7 @@ const dragEnter_handler = event => {
 const dragLeave_handler = event => {
     event.classList.remove('over');
 }
- 
+*/ 
 
 
 
