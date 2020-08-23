@@ -11,7 +11,7 @@ return (
             <div className="holder" onDragOver = {event => event.preventDefault()} 
                  onDrop = {event => onDrop_handler(event)} key={i}  >
                 {i <= 1 ? <div className="box" draggable="true" onDrop = {onDrop_prevent} 
-                id={i} onDragStart = {event => event.dataTransfer.setData('text', event.target.id)}
+                id={i} onDragStart = {event => event.dataTransfer.setData('text', event.target.id)} 
                  /*onDragEnter = {dragEnter_handler(holder)} onDragLeave = {dragLeave_handler(holder)}*/> </div> : ''}
             </div>
         ))}
@@ -37,8 +37,11 @@ const onDrop_prevent = event => {
     }
 };
 
-const holder = document.querySelector(".holder");
+const holder = document.getElementsByClassName("holder");
 console.log(holder);
+
+
+
 
 /* 
 const dragEnter_handler = event => {
