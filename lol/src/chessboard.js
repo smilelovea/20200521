@@ -38,7 +38,8 @@ const onDrop_prevent = event => {
 };
 
 const holder = document.getElementsByClassName("holder");
-console.log(holder);
+console.log(holder); //htmlCollection
+console.log(document.querySelectorAll('box')); // NodeList[] 
 
 
 
