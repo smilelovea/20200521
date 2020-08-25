@@ -9,11 +9,12 @@
 .holder {
     height: 48.5px;
     width: 84px;
-    margin: 24.25px;
+    margin: 14.25px;
     background-size: auto 87.7572px;
     border: solid 5px black;
     background-color: white;
     display: inline-block;
+    
 }
 
 .container {
