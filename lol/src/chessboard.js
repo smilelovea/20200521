@@ -48,11 +48,11 @@ console.log(document.querySelectorAll('holder'));//NodeList[]
 
 
 function dragStart(event){
-    event.currentTarget.style.backgroundColor = "red";
+    event.style.backgroundColor = "red";
 }
 
 function dragEnd(event){
-    event.currentTarget.style.backgroundColor = "white";
+    event.style.backgroundColor = "white";
 }
 
 
