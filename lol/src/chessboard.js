@@ -8,7 +8,7 @@ function chessboard() {
 return (
     <div className="container">
         {Array(28).fill().map((_,i) => (
-            <div className="holder" onDragOver = {event => event.preventDefault()} dragstart = {dragStart} dragend = {dragEnd}
+            <div className="holder" onDragOver = {event => event.preventDefault()} ondragstart = {dragStart} ondragend = {dragEnd}
                  onDrop = {onDrop_handler} key={i} >
                 {i <= 1 ? <div className="box" draggable="true" onDrop = {onDrop_prevent} 
                 id={i} onDragStart = {event => event.dataTransfer.setData('text', event.target.id)} /> : ''}
@@ -40,18 +40,19 @@ function onDrop_handler(event) {
 const holder = document.getElementsByClassName("holder");
 console.log(holder); //htmlCollection
 console.log(document.querySelectorAll('box')); // NodeList[] 
+console.log(document.querySelectorAll('holder'));//NodeList[]
 
 
 
 
 
 
-function dragStart(){
-    holder.style.backgroundColor = "red";
+function dragStart(event){
+    event.currentTarget.style.backgroundColor = "red";
 }
 
-function dragEnd(){
-    holder.style.backgroundColor = "white";
+function dragEnd(event){
+    event.currentTarget.style.backgroundColor = "white";
 }
 
 
