@@ -35,28 +35,27 @@ function onDrop_handler(event) {
     } 
 ;}
 
-
-
-const holder = document.getElementsByClassName("holder");
-console.log(holder); //htmlCollection
-console.log(document.querySelectorAll('box')); // NodeList[] 
-console.log(document.querySelectorAll('holder'));//NodeList[]
-
-
-
-
-
+const holders = document.getElementsByClassName("holder");
 
 function dragStart(event){
-    event.style.backgroundColor = "red";
+    // for (let i=0; i<holders.length; i++) {
+    //     //console.log(holders[i]);
+    //     if (holders[i].firstChild == null) {
+    //         //console.log(holders[i]);
+    //         holders[i].style.backgroundColor = "red";
+    //     }
+    // }
+    Array.from(holders).filter(element => element.firstChild == null).forEach(element => element.style.backgroundColor = "red");
 }
 
 function dragEnd(event){
-    event.style.backgroundColor = "white";
-}
-
-
-
- 
+    for (let i=0; i<holders.length; i++) {
+        //console.log(holders[i]);
+        if (holders[i].firstChild == null) {
+            //console.log(holders[i]);
+            holders[i].style.backgroundColor = "white";
+        }
+    }
+} 
 
 export default chessboard; 
