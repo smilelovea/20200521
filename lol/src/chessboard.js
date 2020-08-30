@@ -1,14 +1,14 @@
   
 import React from 'react';
-import ReactDOM, { render } from 'react-dom';
-import App from './App';
+//import ReactDOM, { render } from 'react-dom';
+//import App from './App';
 import './chessboard.css';
 
 function chessboard() {
 return (
     <div className="container">
         {Array(28).fill().map((_,i) => (
-            <div className="holder" onDragOver = {event => event.preventDefault()} ondragstart = {dragStart} ondragend = {dragEnd}
+            <div className="holder" onDragOver = {event => event.preventDefault()} onDragStart = {dragStart} onDragEnd = {dragEnd}
                  onDrop = {onDrop_handler} key={i} >
                 {i <= 1 ? <div className="box" draggable="true" onDrop = {onDrop_prevent} 
                 id={i} onDragStart = {event => event.dataTransfer.setData('text', event.target.id)} /> : ''}
@@ -35,28 +35,27 @@ function onDrop_handler(event) {
     } 
 ;}
 
-
-
-const holder = document.getElementsByClassName("holder");
-console.log(holder); //htmlCollection
-console.log(document.querySelectorAll('box')); // NodeList[] 
-console.log(document.querySelectorAll('holder'));//NodeList[]
-
-
-
-
-
+const holders = document.getElementsByClassName("holder");
 
 function dragStart(event){
-    event.style.backgroundColor = "red";
+    // for (let i=0; i<holders.length; i++) {
+    //     //console.log(holders[i]);
+    //     if (holders[i].firstChild == null) {
+    //         //console.log(holders[i]);
+    //         holders[i].style.backgroundColor = "red";
+    //     }
+    // }
+    Array.from(holders).filter(element => element.firstChild == null).forEach(element => element.style.backgroundColor = "red");
 }
 
 function dragEnd(event){
-    event.style.backgroundColor = "white";
-}
-
-
-
- 
+    for (let i=0; i<holders.length; i++) {
+        //console.log(holders[i]);
+        if (holders[i].firstChild == null) {
+            //console.log(holders[i]);
+            holders[i].style.backgroundColor = "white";
+        }
+    }
+} 
 
 export default chessboard; 
