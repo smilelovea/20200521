@@ -45,7 +45,7 @@ function dragStart(event){
     //         holders[i].style.backgroundColor = "red";
     //     }
     // }
-    Array.from(holders).filter(element => element.firstChild == null).forEach(element => element.style.backgroundColor = "red");
+    Array.from(holders).filter(element => element.firstChild == null).forEach(element => element.style.backgroundColor = "gray");
 }
 
 function dragEnd(event){
