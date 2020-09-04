@@ -22,7 +22,7 @@ return (
 function onDrop_prevent(event){
     event.preventDefault();
     event.stopPropagation();
-}
+} 
 
 function onDrop_handler(event) {
     event.preventDefault();
@@ -32,11 +32,21 @@ function onDrop_handler(event) {
     
     const boxClass = document.getElementsByClassName('box');
     console.log(boxClass);
+    
 
     if (data) {
-        event.target.append(document.getElementById(data));
-       
-    } 
+        event.target.append(document.getElementById(data));  
+        
+    }
+    
+    if (data) {
+        const boxFirstChild = event.currentTarget.firstElementChild;
+        console.log(boxFirstChild); 
+        const boxLastChild = event.currentTarget.lastChild;
+        console.log(event.currentTarget.lastChild);
+        event.target.insertBefore(boxLastChild,boxFirstChild);
+    }
+
 ;}
 
 
