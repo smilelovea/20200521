@@ -1,6 +1,6 @@
 # 페이지 제작 계획  
 
-![KakaoTalk_20200522_170509477](https://user-images.githubusercontent.com/65073518/82647886-cc2ce600-9c51-11ea-9b46-686886c7da69.jpg)  
+ 
 
 ## lolchess.gg의 배치툴 페이지와 유사한 페이지 제작  
 
