@@ -22,18 +22,34 @@ return (
 function onDrop_prevent(event){
     event.preventDefault();
     event.stopPropagation();
-}
+} 
 
 function onDrop_handler(event) {
     event.preventDefault();
     const data = event.dataTransfer.getData('text');
     console.log(data);
     console.log(event.currentTarget.firstElementChild); // 겹쳐진 box중 아래에 있는 box(원래 있던 box)
+    
+    const boxClass = document.getElementsByClassName('box');
+    console.log(boxClass);
+    
 
     if (data) {
-        event.target.append(document.getElementById(data))
-    } 
+        event.target.append(document.getElementById(data));  
+        
+    }
+    
+    if (data) {
+        const boxFirstChild = event.currentTarget.firstElementChild;
+        console.log(boxFirstChild); 
+        const boxLastChild = event.currentTarget.lastChild;
+        console.log(event.currentTarget.lastChild);
+        event.target.insertBefore(boxLastChild,boxFirstChild);
+    }
+
 ;}
+
+
 
 const holders = document.getElementsByClassName("holder");
 
