@@ -9,14 +9,19 @@ return (
     <div className="container">
         {Array(28).fill().map((_,i) => (
             <div className="holder" onDragOver = {event => event.preventDefault()} onDragStart = {dragStart} onDragEnd = {dragEnd}
-                 onDrop = {onDrop_handler} key={i} >
+                onDrop = {onDrop_handler} key={i} >
                 {i <= 2 ? <div className="box" draggable="true" onDrop = {onDrop_prevent} 
-                id={i} onDragStart = {event => event.dataTransfer.setData('text', event.target.id)} /> : ''}
+                id={i} onDragStart = {onDragStart_box} /> : ''}
             </div>
         ))}
     </div>
  
 )}
+
+function onDragStart_box(event){
+    event.dataTransfer.setData('text', event.target.id);
+    event.dataTransfer.effectAllowed = "move";
+}
 
 
 function onDrop_prevent(event){
@@ -30,7 +35,7 @@ function onDrop_handler(event) {
     const data = event.dataTransfer.getData('text');
     console.log(data);
     console.log(event.currentTarget.firstElementChild); // 겹쳐진 box중 아래에 있는 box(원래 있던 box)
-    
+   
     if (data) {
         event.target.append(document.getElementById(data));  
         
@@ -63,7 +68,9 @@ function dragStart(event){
     //     }
     // }
     Array.from(holders).filter(element => element.firstChild == null).forEach(element => element.style.backgroundColor = "#cccccc");
+   console.log(event.target.currentTarget);
     
+
 }
 
 function dragEnd(event){
@@ -74,6 +81,8 @@ function dragEnd(event){
             holders[i].style.backgroundColor = "white";
         }
     }
+    
 } 
+
 
 export default chessboard; 
