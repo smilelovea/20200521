@@ -9,7 +9,7 @@ return (
     <div className="container">
         {Array(28).fill().map((_,i) => (
             <div className="holder" onDragOver = {event => event.preventDefault()} onDragStart = {dragStart} onDragEnd = {dragEnd}
-                onDrop = {onDrop_handler} key={i} >
+                 onDrop = {onDrop_handler} onDragEnter = {dragEnter} onDragLeave = {dragLeave} key={i} >
                 {i <= 2 ? <div className="box" draggable="true" onDrop = {onDrop_prevent} 
                 id={i} onDragStart = {onDragStart_box} /> : ''}
             </div>
@@ -20,7 +20,7 @@ return (
 
 function onDragStart_box(event){
     event.dataTransfer.setData('text', event.target.id);
-    event.dataTransfer.effectAllowed = "move";
+    //event.dataTransfer.effectAllowed = "move";
 }
 
 
@@ -68,10 +68,9 @@ function dragStart(event){
     //     }
     // }
     Array.from(holders).filter(element => element.firstChild == null).forEach(element => element.style.backgroundColor = "#cccccc");
-   console.log(event.target.currentTarget);
-    
-
 }
+
+
 
 function dragEnd(event){
     for (let i=0; i<holders.length; i++) {
@@ -82,7 +81,18 @@ function dragEnd(event){
         }
     }
     
+     console.log(event.target.parentNode);
 } 
 
+function dragEnter(event){
+    event.preventDefault();
+    
+    holders.className = 'over';
+    console.log(holders.className);
+}
+
+function dragLeave(){
+    holders.className = 'holder';
+}
 
 export default chessboard; 

@@ -5,7 +5,10 @@
     border: solid 5px white;
     background-color: black;
 }
-
+.over{
+    background-color: aqua;
+    
+}
 .holder {
     height: 48.5px;
     width: 84px;
@@ -16,9 +19,7 @@
     display: inline-block;
 }
 
-.holder.over{
-    background-color: aqua;
-}
+
 
 .container {
    width: 656px;
