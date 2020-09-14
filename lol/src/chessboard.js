@@ -20,7 +20,7 @@ return (
 
 function onDragStart_box(event){
     event.dataTransfer.setData('text', event.target.id);
-    //event.dataTransfer.effectAllowed = "move";
+   
 }
 
 
@@ -85,14 +85,15 @@ function dragEnd(event){
 } 
 
 function dragEnter(event){
-    event.preventDefault();
+ event.preventDefault();
+   // event.currentTarget.firstChild.classList.add('over');
     
-    holders.className = 'over';
-    console.log(holders.className);
 }
 
-function dragLeave(){
-    holders.className = 'holder';
+function dragLeave(event){
+    event.preventDefault();
+  
+// event.currentTarget.firstChild.classList.remove('over');
 }
 
 export default chessboard; 
