@@ -5,8 +5,9 @@
     border: solid 5px white;
     background-color: black;
 }
-.over{
+.holder.over{
     background-color: aqua;
+    border: solid 5px aqua;
     
 }
 .holder {

@@ -86,14 +86,14 @@ function dragEnd(event){
 
 function dragEnter(event){
  event.preventDefault();
-   // event.currentTarget.firstChild.classList.add('over');
-    
+    event.currentTarget.classList.add('over');
+   
 }
 
 function dragLeave(event){
     event.preventDefault();
   
-// event.currentTarget.firstChild.classList.remove('over');
+ event.currentTarget.classList.remove('over');
 }
 
 export default chessboard; 
