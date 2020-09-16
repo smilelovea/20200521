@@ -20,7 +20,7 @@ return (
 
 function onDragStart_box(event){
     event.dataTransfer.setData('text', event.target.id);
-   
+    
 }
 
 
@@ -38,7 +38,6 @@ function onDrop_handler(event) {
    
     if (data) {
         event.target.append(document.getElementById(data));  
-        
     }
 
     const boxClass = document.getElementsByClassName('box');
@@ -47,11 +46,9 @@ function onDrop_handler(event) {
     if (data) {        
         const boxLastChild = event.currentTarget.lastChild;
         event.target.replaceChild(boxLastChild,boxFirstChild);
-        event.target.appendChild(boxFirstChild);
-     
-       
+        event.target.appendChild(boxFirstChild);       
     } 
-    event.currentTarget.classList.remove('over');
+    
 ;}
 
 
