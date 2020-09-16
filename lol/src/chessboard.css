@@ -6,6 +6,12 @@
     background-color: black;
 }
 
+.holder.over{
+    background-color:#A9F5F2 !important ;
+    
+    
+}
+
 .holder {
     height: 48.5px;
     width: 84px;
