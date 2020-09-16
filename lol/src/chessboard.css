@@ -6,8 +6,8 @@
     background-color: black;
 }
 .holder.over{
-    background-color: aqua;
-    border: solid 5px aqua;
+    background-color: aqua !important ;
+    
     
 }
 .holder {

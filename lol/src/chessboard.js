@@ -44,15 +44,14 @@ function onDrop_handler(event) {
     const boxClass = document.getElementsByClassName('box');
     console.log(boxClass);
     const boxFirstChild = event.currentTarget.firstElementChild;
-    if (data) {
-        console.log(boxFirstChild); 
+    if (data) {        
         const boxLastChild = event.currentTarget.lastChild;
-        console.log(event.currentTarget.lastChild);
         event.target.replaceChild(boxLastChild,boxFirstChild);
         event.target.appendChild(boxFirstChild);
+     
        
     } 
-
+    event.currentTarget.classList.remove('over');
 ;}
 
 
@@ -68,20 +67,15 @@ function dragStart(event){
     //     }
     // }
     Array.from(holders).filter(element => element.firstChild == null).forEach(element => element.style.backgroundColor = "#cccccc");
+    console.log(event.currentTarget);
+    event.currentTarget.classList.remove('over');
 }
 
 
 
 function dragEnd(event){
-    for (let i=0; i<holders.length; i++) {
-        //console.log(holders[i]);
-        if (holders[i].firstChild == null) {
-            //console.log(holders[i]);
-            holders[i].style.backgroundColor = "white";
-        }
-    }
-    
-     console.log(event.target.parentNode);
+    Array.from(holders).filter(element => element.firstChild == null).forEach(element => element.style.backgroundColor = "white");
+   // console.log(event.currentTarget);
 } 
 
 function dragEnter(event){
