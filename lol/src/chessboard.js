@@ -77,7 +77,7 @@ function dragEnd(event){
 
 function dragEnter(event){
     event.preventDefault();
-       event.currentTarget.classList.add('over');
+       event.target.classList.add('over');
    
    }
    
