@@ -9,7 +9,7 @@ return (
     <div className="container">
         {Array(28).fill().map((_,i) => (
             <div className="holder" onDragOver = {event => event.preventDefault()} onDragStart = {dragStart} onDragEnd = {dragEnd}
-                onDrop = {onDrop_handler} key={i} >
+                onDrop = {onDrop_handler} onDragEnter = {dragEnter} onDragLeave = {dragLeave} key={i} >
                 {i <= 2 ? <div className="box" draggable="true" onDrop = {onDrop_prevent} 
                 id={i} onDragStart = {onDragStart_box} /> : ''}
             </div>
@@ -75,5 +75,16 @@ function dragEnd(event){
    // console.log(event.currentTarget);
 } 
 
+function dragEnter(event){
+    event.preventDefault();
+       event.target.classList.add('over');
+   
+   }
+   
+   function dragLeave(event){
+       event.preventDefault();
+   
+    event.currentTarget.classList.remove('over');
+   }
 
 export default chessboard; 
