@@ -22,9 +22,6 @@
     display: inline-block;
 }
 
-.holder.over{
-    background-color: aqua;
-}
 
 .container {
    width: 656px;
