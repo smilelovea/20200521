@@ -84,7 +84,7 @@ function dragEnter(event){
    function dragLeave(event){
        event.preventDefault();
    
-    event.currentTarget.classList.remove('over');
+    event.target.classList.remove('over');
    }
 
 export default chessboard; 

@@ -27,3 +27,7 @@
    width: 656px;
    height: 388px; 
 }
+
+.test:hover {
+    color: white;
+}
