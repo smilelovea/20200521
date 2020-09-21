@@ -28,6 +28,8 @@
    height: 388px; 
 }
 
-.test:hover {
-    color: white;
+header {
+    width: 1903px;
+    height: 240px;
+    display: block;
 }
