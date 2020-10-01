@@ -1,8 +1,9 @@
   
-import React from 'react';
+import React, { useState } from 'react';
 //import ReactDOM, { render } from 'react-dom';
 //import App from './App';
 import './chessboard.css';
+
 
 function chessboard() {
 return (
@@ -17,6 +18,7 @@ return (
     </div>
  
 )}
+
 
 function onDragStart_box(event){
     event.dataTransfer.setData('text', event.target.id);

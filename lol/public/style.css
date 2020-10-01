@@ -1,0 +1,21 @@
+header {
+    width: 1903px;
+    height: 240px;
+    display: block;
+}
+
+.family-sites {
+    display:inline-block;
+}
+
+.head-main {
+    display: inline-block;
+}
+
+.site-main {
+    display: inline-block;
+}
+
+.sitecontainer ul {
+    display: inline-block;
+}
