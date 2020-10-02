@@ -3,4 +3,6 @@ import ReactDOM from 'react-dom';
 import Chessboard from './chessboard';
 
 
-ReactDOM.render(<Chessboard />,document.getElementById('root'));
+
+
+ReactDOM.render(<Chessboard />,<header />,document.getElementById('root'));
