@@ -17,5 +17,5 @@ header {
 }
 
 .sitecontainer ul {
-    display: inline;
+    display: inline-block;
 }

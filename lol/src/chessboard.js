@@ -35,15 +35,13 @@ function onDrop_prevent(event){
 function onDrop_handler(event) {
     event.preventDefault();
     const data = event.dataTransfer.getData('text');
-    console.log(data);
-    console.log(event.currentTarget.firstElementChild); // 겹쳐진 box중 아래에 있는 box(원래 있던 box)
    
     if (data) {
         event.target.append(document.getElementById(data));  
     }
 
     const boxClass = document.getElementsByClassName('box');
-    console.log(boxClass);
+   
     const boxFirstChild = event.currentTarget.firstElementChild;
     if (data) {        
         const boxLastChild = event.currentTarget.lastChild;
