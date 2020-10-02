@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import './chessboard.css';
 
 
-function chessboard() {
+function Chessboard() {
 return (
     <div className="container">
         {Array(28).fill().map((_,i) => (
@@ -89,4 +89,4 @@ function dragEnter(event){
     event.target.classList.remove('over');
    }
 
-export default chessboard; 
+export default Chessboard; 

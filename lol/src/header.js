@@ -1,10 +1,7 @@
 import React from 'react';
 import './headercss.css';
 
-class Header extends React.Component {
-    render(){
-
-   
+function Header() {
     return(
         <header>
         <div className="family-sites" >
@@ -26,6 +23,6 @@ class Header extends React.Component {
 
     )
     } 
-}
+
 
 export default Header;
