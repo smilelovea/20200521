@@ -12,6 +12,14 @@
     
 }
 
+.container {
+
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: 656px;
+    height: 388px; 
+}
+
 .holder {
     height: 48.5px;
     width: 84px;
@@ -19,12 +27,7 @@
     background-size: auto 87.7572px;
     border: solid 5px black;
     background-color: white;
-    display: inline-block;
 }
 
 
-.container {
-   width: 656px;
-   height: 388px; 
-}
 
