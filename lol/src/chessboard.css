@@ -1,6 +1,6 @@
 .box {
   height: 40px;
-  width: 76px;
+  width: 60px;
   border: solid 5px white;
   background-color: black;
 }
@@ -13,16 +13,36 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-row-gap: 2px;
-  width: 656px;
+  grid-column: 1/7;
+  grid-row: 1/4;
+  width: 650px;
   height: 300px;
+  margin-bottom: 50px;
 }
 
 .holder {
-  height: 48.5px;
-  width: 84px;
+  height: 50px;
+  width: 70px;
   margin: 2px;
   padding-bottom: 2px;
   background-size: auto 87.7572px;
   border: solid 5px black;
   background-color: white;
+}
+
+.champboxcon {
+  width: 650px;
+  display: grid;
+  grid-column: 1/8;
+  grid-row: 1/7;
+  grid-gap: 2px;
+  margin-bottom: 50px;
+}
+
+.champ {
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  border: solid 2px black;
+  grid-area: champbox;
 }

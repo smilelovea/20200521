@@ -35,7 +35,11 @@ function Chessboard() {
           ))}
       </div>
 
-      <div className="champbox">hi</div>
+      <div className="champboxcon">
+        <div className="champbox">
+          {Array(58).fill(<div className="champ" />)}
+        </div>
+      </div>
     </div>
   );
 }
