@@ -1,33 +1,28 @@
-  
 .box {
-    height: 40px;
-    width: 76px;
-    border: solid 5px white;
-    background-color: black;
+  height: 40px;
+  width: 76px;
+  border: solid 5px white;
+  background-color: black;
 }
 
-.holder.over{
-    background-color:#A9F5F2 !important ;
-    
-    
+.holder.over {
+  background-color: #a9f5f2 !important ;
 }
 
-.container {
-
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    width: 656px;
-    height: 388px; 
+.chessboard {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-row-gap: 2px;
+  width: 656px;
+  height: 300px;
 }
 
 .holder {
-    height: 48.5px;
-    width: 84px;
-    margin: 14.25px;
-    background-size: auto 87.7572px;
-    border: solid 5px black;
-    background-color: white;
+  height: 48.5px;
+  width: 84px;
+  margin: 2px;
+  padding-bottom: 2px;
+  background-size: auto 87.7572px;
+  border: solid 5px black;
+  background-color: white;
 }
-
-
-
