@@ -5,7 +5,7 @@ import "./chessboard.css";
 
 function Chessboard() {
   return (
-    <div className="container">
+    <div className="container" >
       <div className="chessboard">
         {Array(28)
           .fill()
@@ -19,6 +19,7 @@ function Chessboard() {
               onDragEnter={dragEnter}
               onDragLeave={dragLeave}
               key={i}
+              
             >
               {i <= 2 ? (
                 <div
@@ -27,6 +28,7 @@ function Chessboard() {
                   onDrop={onDrop_prevent}
                   id={i}
                   onDragStart={onDragStart_box}
+                  
                 />
               ) : (
                 ""
@@ -34,19 +36,28 @@ function Chessboard() {
             </div>
           ))}
       </div>
+      <Champbox />
+</div>
 
-      <div className="champboxcon">
+  );
+}
+
+function Champbox() {
+  return(
+    <div className="champboxcon">
         <div className="champbox">
           {Array(58).fill(<div className="champ" />)}
         </div>
       </div>
-    </div>
-  );
+  )
 }
 
 function onDragStart_box(event) {
   event.dataTransfer.setData("text", event.target.id);
+ 
+  
 }
+
 
 function onDrop_prevent(event) {
   event.preventDefault();
@@ -56,19 +67,21 @@ function onDrop_prevent(event) {
 function onDrop_handler(event) {
   event.preventDefault();
   const data = event.dataTransfer.getData("text");
+  console.log(data);
+  
+  const boxFirstChild = event.target.firstElementChild;
+  const boxLastChild = event.target.lastChild;
+  console.log(boxFirstChild);
 
   if (data) {
-    event.target.append(document.getElementById(data));
+    event.target.append(document.getElementById(data));  
   }
 
-  const boxClass = document.getElementsByClassName("box");
-
-  const boxFirstChild = event.currentTarget.firstElementChild;
-  if (data) {
-    const boxLastChild = event.currentTarget.lastChild;
+    if (boxFirstChild !== null) {  
     event.target.replaceChild(boxLastChild, boxFirstChild);
     event.target.appendChild(boxFirstChild);
   }
+  else{}
 }
 
 const holders = document.getElementsByClassName("holder");
@@ -84,8 +97,9 @@ function dragStart(event) {
   Array.from(holders)
     .filter((element) => element.firstChild == null)
     .forEach((element) => (element.style.backgroundColor = "#cccccc"));
-  console.log(event.currentTarget);
+  console.log(event.Target);
   event.currentTarget.classList.remove("over");
+  
 }
 
 function dragEnd(event) {
@@ -93,6 +107,7 @@ function dragEnd(event) {
     .filter((element) => element.firstChild == null)
     .forEach((element) => (element.style.backgroundColor = "white"));
   // console.log(event.currentTarget);
+ 
 }
 
 function dragEnter(event) {
@@ -102,8 +117,8 @@ function dragEnter(event) {
 
 function dragLeave(event) {
   event.preventDefault();
-
   event.target.classList.remove("over");
+  
 }
 
 export default Chessboard;
