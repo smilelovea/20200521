@@ -69,6 +69,7 @@ function onDrop_handler(event) {
 
   if (data) {
     event.target.append(document.getElementById(data));
+    
   }
 
   //if (boxFirstChild !== null) {
@@ -93,8 +94,7 @@ function dragStart(event) {
     .forEach((element) => (element.style.backgroundColor = "#cccccc"));
   console.log(event.target);
   event.currentTarget.classList.remove("over");
-  const data = event.dataTransfer.getData("text");
-  console.log(data);
+  
 }
 
 function dragEnd(event) {
@@ -107,11 +107,13 @@ function dragEnd(event) {
 function dragEnter(event) {
   event.preventDefault();
   event.target.classList.add("over");
+  console.log(event.currentTarget);
 }
 
 function dragLeave(event) {
   event.preventDefault();
   event.target.classList.remove("over");
+  
 }
 
 export default Chessboard;
