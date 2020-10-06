@@ -1,6 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Chessboard from './chessboard';
+// import { render } from "@testing-library/react";
+import React from "react";
+import ReactDOM from "react-dom";
+import Chessboard from "./chessboard";
+import Header from "./header";
+import Footer from "./footer";
 
+class Home extends React.Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <Chessboard />
+        <Footer />
+      </div>
+    );
+  }
+}
 
-ReactDOM.render(<Chessboard />,document.getElementById('root'));
+ReactDOM.render(<Home />, document.getElementById("root"));
