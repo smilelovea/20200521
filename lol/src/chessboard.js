@@ -61,7 +61,7 @@ function onDrop_prevent(event) {
 function onDrop_handler(event) {
   event.preventDefault();
   const data = event.dataTransfer.getData("text");
-  console.log(data);
+  console.log(event.currentTarget);
 
   const boxFirstChild = event.target.firstElementChild;
   const boxLastChild = event.target.lastChild;
@@ -88,13 +88,13 @@ function dragStart(event) {
   //         holders[i].style.backgroundColor = "red";
   //     }
   // }
-
+if(event.target.id){
   Array.from(holders)
     .filter((element) => element.firstChild == null)
     .forEach((element) => (element.style.backgroundColor = "#cccccc"));
   console.log(event.target);
   event.currentTarget.classList.remove("over");
-  
+}
 }
 
 function dragEnd(event) {
