@@ -43,7 +43,7 @@ function Champbox() {
   return (
     <div className="champboxcon">
       <div className="champbox">
-        {Array(58).fill(<div className="champ" />)}
+      {Array(58).fill().map((_, i) => (<div className="champ" key={i}/>))}
       </div>
     </div>
   );
@@ -88,13 +88,17 @@ function dragStart(event) {
   //         holders[i].style.backgroundColor = "red";
   //     }
   // }
-
+  
+if(event.target.id){
   Array.from(holders)
     .filter((element) => element.firstChild == null)
     .forEach((element) => (element.style.backgroundColor = "#cccccc"));
   console.log(event.target);
   event.currentTarget.classList.remove("over");
-  
+}
+else {
+  event.preventDefault();
+}
 }
 
 function dragEnd(event) {
