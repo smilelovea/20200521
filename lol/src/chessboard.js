@@ -43,7 +43,7 @@ function Champbox() {
   return (
     <div className="champboxcon">
       <div className="champbox">
-      {Array(58).fill().map((_, i) => (<div className="champ" key={i}/>))}
+      {Array(58).fill().map((_, i) => (<div className="champ" key={i}><img src={require("../src/img/img (1).png")} alt="champ"/> </div>))}
       </div>
     </div>
   );
