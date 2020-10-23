@@ -34,53 +34,61 @@ function Chessboard() {
             </div>
           ))}
       </div>
-      <Champbox />
     </div>
   );
 }
 
 function Champbox() {
   return (
-    <div className="champboxcon">
-      <div className="champbox">
-      {Array(58).fill().map((_, i) => (<div className="champ" key={i}><img src={require(`../src/img/img (${i+1}).png`)} alt="champ"/> </div>))}
+    <div>
+      <Chessboard />
+      <div className="champboxcon">
+        <div className="champbox">
+          {Array(58)
+            .fill()
+            .map((_, i) => (
+              <div className="champ" key={i}>
+                <img
+                  src={require(`../src/img/img (${i + 1}).png`)}
+                  alt="champ"
+                />
+              </div>
+            ))}
+        </div>
       </div>
     </div>
   );
 }
 
-function onDragStart_box(event) {
+const onDragStart_box = (event) => {
   event.dataTransfer.setData("text", event.target.id);
-}
+};
 
-function onDrop_prevent(event) {
+const onDrop_prevent = (event) => {
   event.preventDefault();
   event.stopPropagation();
-}
+};
 
-function onDrop_handler(event) {
+const onDrop_handler = (event) => {
   event.preventDefault();
   const data = event.dataTransfer.getData("text");
   console.log(event.currentTarget);
 
   const boxFirstChild = event.target.firstElementChild;
   const boxLastChild = event.target.lastChild;
-  // console.log(boxFirstChild);
 
   if (data) {
     event.target.append(document.getElementById(data));
-    
   }
-
   //if (boxFirstChild !== null) {
   //  event.target.replaceChild(boxLastChild, boxFirstChild);
   //  event.target.appendChild(boxFirstChild);
   //}
-}
+};
 
 const holders = document.getElementsByClassName("holder");
 
-function dragStart(event) {
+const dragStart = (event) => {
   //for (let i=0; i<holders.length; i++) {
   //    // console.log(holders[i]);
   //     if (holders[i].firstChild == null) {
@@ -88,36 +96,33 @@ function dragStart(event) {
   //         holders[i].style.backgroundColor = "red";
   //     }
   // }
-  
-if(event.target.id){
-  Array.from(holders)
-    .filter((element) => element.firstChild == null)
-    .forEach((element) => (element.style.backgroundColor = "#cccccc"));
-  console.log(event.target);
-  event.currentTarget.classList.remove("over");
-}
-else {
-  event.preventDefault();
-}
-}
+  if (event.target.id) {
+    Array.from(holders)
+      .filter((element) => element.firstChild == null)
+      .forEach((element) => (element.style.backgroundColor = "#cccccc"));
+    console.log(event.target);
+    event.currentTarget.classList.remove("over");
+  } else {
+    event.preventDefault();
+  }
+};
 
-function dragEnd(event) {
+const dragEnd = (event) => {
   Array.from(holders)
     .filter((element) => element.firstChild == null)
     .forEach((element) => (element.style.backgroundColor = "white"));
   // console.log(event.currentTarget);
-}
+};
 
-function dragEnter(event) {
+const dragEnter = (event) => {
   event.preventDefault();
   event.target.classList.add("over");
   console.log(event.currentTarget);
-}
+};
 
-function dragLeave(event) {
+const dragLeave = (event) => {
   event.preventDefault();
   event.target.classList.remove("over");
-  
-}
+};
 
-export default Chessboard;
+export default Champbox;
