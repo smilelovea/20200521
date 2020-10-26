@@ -20,7 +20,7 @@ function Chessboard() {
               onDragLeave={dragLeave}
               key={i}
             >
-              {i <= 2 ? (
+              {i < 0 ? (
                 <div
                   className="box"
                   draggable="true"
@@ -51,6 +51,10 @@ function Champbox() {
                 <img
                   src={require(`../src/img/img (${i + 1}).png`)}
                   alt="champ"
+                  draggable="true"
+                  onDrop={onDrop_prevent}
+                  id={i}
+                  onDragStart={onDragStart_box}
                 />
               </div>
             ))}
@@ -107,7 +111,7 @@ const dragStart = (event) => {
   }
 };
 
-const dragEnd = (event) => {
+const dragEnd = () => {
   Array.from(holders)
     .filter((element) => element.firstChild == null)
     .forEach((element) => (element.style.backgroundColor = "white"));
