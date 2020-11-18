@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
+
 //import ReactDOM, { render } from 'react-dom';
 //import App from './App';
 import "./chessboard.css";
@@ -15,7 +16,7 @@ function Chessboard() {
               onDragOver={(event) => event.preventDefault()}
               onDragStart={dragStart}
               onDragEnd={dragEnd}
-              onDrop={onDrop_handler}
+              onDrop={(onDrop_handler, dropCopy)}
               onDragEnter={dragEnter}
               onDragLeave={dragLeave}
               key={i}
@@ -40,7 +41,7 @@ function Chessboard() {
 
 function Champbox() {
   return (
-    <div>
+    <>
       <Chessboard />
       <div className="champboxcon">
         <div className="champbox">
@@ -60,7 +61,7 @@ function Champbox() {
             ))}
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -88,6 +89,18 @@ const onDrop_handler = (event) => {
   //  event.target.replaceChild(boxLastChild, boxFirstChild);
   //  event.target.appendChild(boxFirstChild);
   //}
+};
+
+const dropCopy = (event) => {
+  event.preventDefault();
+  const data = event.dataTransfer.getData("text");
+  let copyimg = document.createElement("img");
+  let original = document.getElementById(data);
+  // copyimg.src = original.src;
+  // console.log(copyimg);
+  // console.log(data);
+  // event.target.append(original);
+  // event.target.append(copyimg);
 };
 
 const holders = document.getElementsByClassName("holder");
