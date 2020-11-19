@@ -64,7 +64,29 @@ function Header() {
           </ul>
         </div>
       </div>
-      <div className="head-main"></div>
+      <div className="head-banner">
+        <div className="logo">
+          <a href="lolchess.gg">
+            <img src="" alt="lolchess.gg logo" />
+            <h1>롤체지지</h1>
+          </a>
+        </div>
+        <div className="record-search-box">
+          <form action="" method="get">
+            <div class="dropdown-group">
+              <button type="button" class="dropdown" value="KR"></button>
+              <div class="dropdown-menu"></div>
+            </div>
+            <input type="text" placeholder="소환사 검색"></input>
+            <button type="submit" />
+          </form>
+        </div>
+        <div className="site-notice">
+          <a href="" target="_blank">
+            패치 핫픽스
+          </a>
+        </div>
+      </div>
       <div className="site-menu"></div>
     </header>
   );
