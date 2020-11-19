@@ -87,7 +87,61 @@ function Header() {
           </a>
         </div>
       </div>
-      <div className="site-menu"></div>
+      <div className="site-menu">
+        <ul>
+          <li>
+            <a href="https://lolchess.gg/patch-notes">가이드</a>
+          </li>
+          <li>
+            <a href="https://lolchess.gg/meta">추천메타</a>
+          </li>
+          <li>
+            <a href="https://lolchess.gg/decks">천상계 덱</a>
+          </li>
+          <li>
+            <a href="https://lolchess.gg/statistics/items">아이템 통계</a>
+          </li>
+          <li>
+            <span></span>
+          </li>
+          <li>
+            <a href="https://lolchess.gg/leaderboards">순위표</a>
+          </li>
+          <li>
+            <a href="https://lolchess.gg/favorites">즐겨찾기</a>
+          </li>
+          <li>
+            <span></span>
+          </li>
+          <li>
+            <a href="https://lolchess.gg/champions/set4/aatrox">챔피언</a>
+          </li>
+          <li>
+            <a href="https://lolchess.gg/synergies">시너지</a>
+          </li>
+          <li>
+            <a href="https://lolchess.gg/items">아이템</a>
+          </li>
+          <li>
+            <a href="https://lolchess.gg/cheatsheet">족보</a>
+          </li>
+          <li>
+            <span></span>
+          </li>
+          <li>
+            <a href="https://lolchess.gg/builder?hl=ko-KR">배치툴</a>
+          </li>
+          <li>
+            <a href="https://lolchess.gg/simulator/4.0">시뮬레이터</a>
+          </li>
+          <li>
+            <span></span>
+          </li>
+          <li>
+            <a href="https://lolchess.gg/board/tft/list">커뮤니티</a>
+          </li>
+        </ul>
+      </div>
     </header>
   );
 }
