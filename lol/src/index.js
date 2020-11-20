@@ -4,13 +4,15 @@ import ReactDOM from "react-dom";
 import Chessboard from "./chessboard";
 import Header from "./header";
 import Footer from "./footer";
+import Main from "./main";
+import Champbox from "./chessboard";
 
 class Home extends React.Component {
   render() {
     return (
       <div>
         <Header />
-        <Chessboard />
+        <Main />
         <Footer />
       </div>
     );
