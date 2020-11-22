@@ -1,11 +1,59 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 header {
   width: 1903px;
   height: 240px;
   display: block;
+  background-image: url(../src/teemo-bg.jpg);
+  background-position: cover;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .family-sites {
+  height: 40px;
+  background-color: #212529;
+}
+
+.sitecontainer {
+  display: block;
+  margin: 0 381.5px;
+}
+
+.sitecontainer ul {
+  display: flex;
+}
+
+.sitecontainer ul li {
   display: inline-block;
+  padding: 0 16px;
+}
+
+.sitecontainer ul li a {
+  font-size: 12px;
+  color: #c0daf1;
+  text-decoration: none;
+  line-height: 40px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.sitecontainer img {
+  height: 16px;
+  width: auto;
+  margin: -2px 4px 0 0;
+  vertical-align: middle;
+}
+
+.site-menu {
+  height: 50px;
+}
+
+ul {
+  list-style-type: none;
 }
 
 .head-main {

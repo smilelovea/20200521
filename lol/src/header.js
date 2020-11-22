@@ -9,55 +9,55 @@ function Header() {
           <ul>
             <li>
               <a href="https://dak.gg/pubg">
-                <img src="" />
+                <img src={require("../src/iconimg/pubg.png")} />
                 배틀그라운드
               </a>
             </li>
             <li>
               <a href="https://dak.gg/warzone">
-                <img src="" />
+                <img src={require("../src/iconimg/wz.png")} />
                 워존
               </a>
             </li>
             <li>
               <a href="https://dak.gg/valorant">
-                <img src="" />
+                <img src={require("../src/iconimg/valo.png")} />
                 발로란트
               </a>
             </li>
             <li>
               <a href="https://poro.gg/wildrift">
-                <img src="" />
+                <img src={require("../src/iconimg/wildlift.png")} />
                 와일드 리프트
               </a>
             </li>
             <li>
               <a href="https://poro.gg/">
-                <img src="" />
+                <img src={require("../src/iconimg/lol.png")} />
                 리그오브레전드
               </a>
             </li>
             <li>
               <a href="https://lolchess.gg/">
-                <img src="" />
+                <img src={require("../src/iconimg/tft.png")} />
                 전략적 팀 전투
               </a>
             </li>
             <li>
               <a href="https://lor.poro.gg/ko">
-                <img src="" />
+                <img src={require("../src/iconimg/rune.png")} />
                 룬테라
               </a>
             </li>
             <li>
               <a href="https://dak.gg/apex">
-                <img src="" />
+                <img src={require("../src/iconimg/apex.png")} />
                 에이펙스레전드
               </a>
             </li>
             <li>
               <a href="https://maple.gg/">
-                <img src="" />
+                <img src={require("../src/iconimg/maple.png")} />
                 메이플스토리
               </a>
             </li>
@@ -73,9 +73,9 @@ function Header() {
         </div>
         <div className="record-search-box">
           <form action="" method="get">
-            <div class="dropdown-group">
-              <button type="button" class="dropdown" value="KR"></button>
-              <div class="dropdown-menu"></div>
+            <div className="dropdown-group">
+              <button type="button" className="dropdown" value="KR"></button>
+              <div className="dropdown-menu"></div>
             </div>
             <input type="text" placeholder="소환사 검색"></input>
             <button type="submit" />
