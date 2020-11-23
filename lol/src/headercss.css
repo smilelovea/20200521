@@ -15,7 +15,7 @@ header {
 
 .family-sites {
   height: 40px;
-  background-color: #212529;
+  background-color: #3a3f4c;
 }
 
 .sitecontainer {
@@ -48,8 +48,83 @@ header {
   vertical-align: middle;
 }
 
+.head-banner {
+  display: flex;
+}
+
+.logo {
+  height: 150px;
+  margin: 0 381.5px;
+}
+
+.logo a {
+  margin: 58px 20px;
+  display: flex;
+  text-decoration: none;
+}
+
+.logo a h1 {
+  color: white;
+  margin: 0 0 0 15px;
+  font-weight: 400;
+  font-size: 2em;
+}
+
+.logo a img {
+  height: 40px;
+}
+
+.record-search-box {
+  margin: 56px;
+  display: inline;
+}
+
+.record-search-box form {
+  display: flex;
+  width: 274px;
+  height: 39px;
+}
+
+.dropdown {
+  position: absolute;
+  width: 55px;
+  font-size: 11px;
+  padding: 4px 8px;
+  background-color: #343a40;
+  color: white;
+  border-radius: 0.25em;
+  border: 0;
+}
+
+.dropdown::before {
+  content: "";
+  background: url(../src/iconimg/triangle.png);
+
+  display: inline-block;
+}
+
+.submitbtn {
+  position: absolute;
+  border: none;
+  display: inline-block;
+  background-image: url(../src/iconimg/glass.png);
+  background-size: cover;
+  background-color: transparent;
+  width: 12px;
+  height: 13px;
+  padding: 1px 6px;
+}
+
+.submitbtn::before {
+}
+
 .site-menu {
   height: 50px;
+  display: block;
+}
+
+.site-menu ul {
+  display: flex;
 }
 
 ul {

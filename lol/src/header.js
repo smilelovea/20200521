@@ -67,24 +67,24 @@ function Header() {
       <div className="head-banner">
         <div className="logo">
           <a href="lolchess.gg">
-            <img src="" alt="lolchess.gg logo" />
+            <img
+              src={require("../src/iconimg/tft.png")}
+              alt="lolchess.gg logo"
+            />
             <h1>롤체지지</h1>
           </a>
         </div>
         <div className="record-search-box">
           <form action="" method="get">
             <div className="dropdown-group">
-              <button type="button" className="dropdown" value="KR"></button>
+              <button type="button" className="dropdown">
+                <span>KR</span>
+              </button>
               <div className="dropdown-menu"></div>
             </div>
             <input type="text" placeholder="소환사 검색"></input>
-            <button type="submit" />
+            <button type="submit" className="submitbtn"></button>
           </form>
-        </div>
-        <div className="site-notice">
-          <a href="" target="_blank">
-            패치 핫픽스
-          </a>
         </div>
       </div>
       <div className="site-menu">
