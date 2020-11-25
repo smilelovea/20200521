@@ -68,7 +68,7 @@ function Header() {
         <div className="logo">
           <a href="lolchess.gg">
             <img
-              src={require("../src/iconimg/tft.png")}
+              src={require("../src/iconimg/lolchessgg-logo.png")}
               alt="lolchess.gg logo"
             />
             <h1>롤체지지</h1>
@@ -96,10 +96,17 @@ function Header() {
             <a href="https://lolchess.gg/meta">추천메타</a>
           </li>
           <li>
-            <a href="https://lolchess.gg/decks">천상계 덱</a>
+            <a href="https://lolchess.gg/decks" style={{ color: "orange" }}>
+              천상계 덱
+            </a>
           </li>
           <li>
-            <a href="https://lolchess.gg/statistics/items">아이템 통계</a>
+            <a
+              href="https://lolchess.gg/statistics/items"
+              style={{ color: "greenyellow" }}
+            >
+              아이템 통계
+            </a>
           </li>
           <li>
             <span></span>

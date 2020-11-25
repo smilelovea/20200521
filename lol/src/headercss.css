@@ -4,13 +4,14 @@
 }
 
 header {
-  width: 1903px;
+  width: 1920px;
   height: 240px;
   display: block;
   background-image: url(../src/teemo-bg.jpg);
-  background-position: cover;
+
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
+  background-position-x: right;
 }
 
 .family-sites {
@@ -50,11 +51,11 @@ header {
 
 .head-banner {
   display: flex;
+  margin: 0 381.5px;
 }
 
 .logo {
   height: 150px;
-  margin: 0 381.5px;
 }
 
 .logo a {
@@ -82,25 +83,40 @@ header {
 .record-search-box form {
   display: flex;
   width: 274px;
-  height: 39px;
+  height: 30px;
+  position: absolute;
+  right: 381.5px;
+  margin: 0 16px;
+}
+
+.record-search-box form input {
+  width: 274px;
+  border-style: none;
+  border-radius: 0.25em;
+  padding: 1px 8px 1px 62px;
+  margin: 0 5px;
 }
 
 .dropdown {
   position: absolute;
   width: 55px;
+  height: 26px;
   font-size: 11px;
   padding: 4px 8px;
   background-color: #343a40;
   color: white;
   border-radius: 0.25em;
   border: 0;
+  top: 2px;
+  left: 8px;
 }
 
-.dropdown::before {
+.dropdown ::before {
   content: "";
   background: url(../src/iconimg/triangle.png);
-
-  display: inline-block;
+  position: absolute;
+  left: 10px;
+  top: 8px;
 }
 
 .submitbtn {
@@ -108,11 +124,14 @@ header {
   border: none;
   display: inline-block;
   background-image: url(../src/iconimg/glass.png);
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-color: transparent;
   width: 12px;
   height: 13px;
   padding: 1px 6px;
+  top: 8px;
+  right: 12px;
 }
 
 .submitbtn::before {
@@ -120,11 +139,42 @@ header {
 
 .site-menu {
   height: 50px;
-  display: block;
+  width: 1920px;
+  display: inline-block;
+
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .site-menu ul {
   display: flex;
+  margin: 0 381.5px;
+}
+
+.site-menu ul li {
+  margin: 0 8px;
+  padding: 16px 0;
+}
+
+.site-menu ul li a {
+  text-decoration: none;
+  font-size: 15px;
+  color: #d6d6d6;
+}
+
+.toptier {
+  color: orange;
+  text-decoration: none;
+}
+
+.site-menu ul a:hover {
+  border-bottom: 4px solid white;
+}
+
+.site-menu ul li span::before {
+  content: "";
+  color: #999;
+  border-right: 2px solid;
+  height: 15px;
 }
 
 ul {
