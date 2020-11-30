@@ -43,6 +43,22 @@ function Champbox() {
   return (
     <>
       <Chessboard />
+      <div className="champ-filter">
+        <ul className="champ-filter-list">
+          <li>
+            <button>이름순</button>
+          </li>
+          <li>
+            <button>가격순</button>
+          </li>
+          <li>
+            <button>계열별</button>
+          </li>
+          <li>
+            <button>직업별</button>
+          </li>
+        </ul>
+      </div>
       <div className="champboxcon">
         <div className="champbox">
           {Array(58)
@@ -59,6 +75,16 @@ function Champbox() {
                 />
               </div>
             ))}
+        </div>
+        <div className="how-to-use">
+          <h1>배치툴 사용방법</h1>
+          <p>
+            * 챔피언을 드래그하여 배치할 수 있습니다.
+            <br />
+            * 배치된 챔피언은 챔피언 목록으로 드래그하여 배치해제 할 수
+            있습니다.
+            <br />
+          </p>
         </div>
       </div>
     </>
