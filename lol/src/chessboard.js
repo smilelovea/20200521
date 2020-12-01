@@ -14,9 +14,9 @@ function Chessboard() {
             <div
               className="holder"
               onDragOver={(event) => event.preventDefault()}
-              onDragStart={dragStart}
-              onDragEnd={dragEnd}
-              onDrop={(onDrop_handler, dropCopy)}
+              // onDragStart={dragStart}
+              // onDragEnd={dragEnd}
+              onDrop={onDrop_handler}
               onDragEnter={dragEnter}
               onDragLeave={dragLeave}
               key={i}
@@ -71,7 +71,11 @@ function Champbox() {
                   draggable="true"
                   onDrop={onDrop_prevent}
                   id={i}
-                  onDragStart={onDragStart_box}
+                  onDragStart={(event) => {
+                    onDragStart_box(event);
+                    dragStart(event);
+                  }}
+                  onDragEnd={dragEnd}
                 />
               </div>
             ))}
@@ -92,7 +96,9 @@ function Champbox() {
 }
 
 const onDragStart_box = (event) => {
-  event.dataTransfer.setData("text", event.target.id);
+  event.dataTransfer.setData("image", event.target.id);
+  console.log(event.target);
+  console.log(event.target.id);
 };
 
 const onDrop_prevent = (event) => {
@@ -102,31 +108,33 @@ const onDrop_prevent = (event) => {
 
 const onDrop_handler = (event) => {
   event.preventDefault();
-  const data = event.dataTransfer.getData("text");
-  console.log(event.currentTarget);
+  const data = event.dataTransfer.getData("image");
+  console.log(data);
 
   const boxFirstChild = event.target.firstElementChild;
   const boxLastChild = event.target.lastChild;
 
   if (data) {
     event.target.append(document.getElementById(data));
+    console.log(document.getElementById(data));
   }
-  //if (boxFirstChild !== null) {
-  //  event.target.replaceChild(boxLastChild, boxFirstChild);
-  //  event.target.appendChild(boxFirstChild);
-  //}
+  // if (boxFirstChild !== null) {
+  //   event.target.replaceChild(boxLastChild, boxFirstChild);
+  //   event.target.appendChild(boxFirstChild);
+  // }
 };
 
 const dropCopy = (event) => {
   event.preventDefault();
-  const data = event.dataTransfer.getData("text");
+  const data = event.dataTransfer.getData("image");
   let copyimg = document.createElement("img");
   let original = document.getElementById(data);
-  // copyimg.src = original.src;
-  // console.log(copyimg);
-  // console.log(data);
-  // event.target.append(original);
-  // event.target.append(copyimg);
+  copyimg.src = original.src;
+
+  console.log(copyimg);
+  console.log(data);
+  event.target.append(original);
+  event.target.append(copyimg);
 };
 
 const holders = document.getElementsByClassName("holder");
@@ -143,7 +151,8 @@ const dragStart = (event) => {
     Array.from(holders)
       .filter((element) => element.firstChild == null)
       .forEach((element) => (element.style.backgroundColor = "#cccccc"));
-    console.log(event.target);
+
+    console.log(event.target.id);
     event.currentTarget.classList.remove("over");
   } else {
     event.preventDefault();
