@@ -34,6 +34,21 @@
   background-color: white;
 }
 
+.champ-filter-list {
+  display: flex;
+  padding: 0;
+}
+
+.champ-filter-list button {
+  border: 1px solid #6c757d;
+  border-radius: 00.25rem;
+  background-color: transparent;
+  color: #6c757d;
+  padding: 4px 8px;
+  font-size: 13px;
+  margin: 0 4px 0 0;
+}
+
 .champboxcon {
   width: 650px;
   display: grid;
@@ -49,4 +64,23 @@
   width: 60px;
   border: solid 2px black;
   grid-area: champbox;
+}
+
+.how-to-use {
+  width: 870px;
+  height: 101px;
+  background-color: #333333;
+  color: white;
+  padding: 12px 20px;
+  margin: 48px 0 16px;
+  border-radius: 0.25rem;
+}
+
+.how-to-use h1 {
+  font-size: 14px;
+  margin: 10px 0 10px;
+}
+
+.how-to-use p {
+  font-size: 12px;
 }
