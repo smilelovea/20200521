@@ -14,14 +14,13 @@ function Chessboard() {
             <div
               className="holder"
               onDragOver={(event) => event.preventDefault()}
-              // onDragStart={dragStart}
-              // onDragEnd={dragEnd}
-              onDrop={onDrop_handler}
+              onDrop={dropCopy}
               onDragEnter={dragEnter}
               onDragLeave={dragLeave}
+              onDragStart={dragStart}
               key={i}
             >
-              {i < 0 ? (
+              {/* {i < 0 ? (
                 <div
                   className="box"
                   draggable="true"
@@ -31,7 +30,7 @@ function Chessboard() {
                 />
               ) : (
                 ""
-              )}
+              )} */}
             </div>
           ))}
       </div>
@@ -64,12 +63,11 @@ function Champbox() {
           {Array(58)
             .fill()
             .map((_, i) => (
-              <div className="champ" key={i}>
+              <div className="champ" key={i} onDrop={dropCopy}>
                 <img
                   src={require(`../src/img/img (${i + 1}).png`)}
                   alt="champ"
                   draggable="true"
-                  onDrop={onDrop_prevent}
                   id={i}
                   onDragStart={(event) => {
                     onDragStart_box(event);
@@ -97,8 +95,7 @@ function Champbox() {
 
 const onDragStart_box = (event) => {
   event.dataTransfer.setData("image", event.target.id);
-  console.log(event.target);
-  console.log(event.target.id);
+  const data = event.dataTransfer.getData("image");
 };
 
 const onDrop_prevent = (event) => {
@@ -125,16 +122,16 @@ const onDrop_handler = (event) => {
 };
 
 const dropCopy = (event) => {
-  event.preventDefault();
+  // event.preventDefault();
+  event.dataTransfer.setData("image", event.target.id);
   const data = event.dataTransfer.getData("image");
-  let copyimg = document.createElement("img");
   let original = document.getElementById(data);
+  let copyimg = document.createElement("img");
   copyimg.src = original.src;
 
-  console.log(copyimg);
-  console.log(data);
-  event.target.append(original);
   event.target.append(copyimg);
+  console.log(event.currentTarget);
+  console.log(copyimg.src);
 };
 
 const holders = document.getElementsByClassName("holder");
