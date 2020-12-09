@@ -18,6 +18,7 @@ function Chessboard() {
               onDragEnter={dragEnter}
               onDragLeave={dragLeave}
               onDragStart={dragStart}
+              onDragEnd={dragEnd}
               key={i}
             >
               {/* {i < 0 ? (
@@ -123,15 +124,24 @@ const onDrop_handler = (event) => {
 
 const dropCopy = (event) => {
   // event.preventDefault();
-  event.dataTransfer.setData("image", event.target.id);
   const data = event.dataTransfer.getData("image");
   let original = document.getElementById(data);
   let copyimg = document.createElement("img");
-  copyimg.src = original.src;
+  if (data) {
+    event.dataTransfer.setData("image", document.getElementById(data));
 
-  event.target.append(copyimg);
-  console.log(event.currentTarget);
-  console.log(copyimg.src);
+    copyimg.src = original.src;
+
+    console.log(copyimg.src);
+    event.target.append(copyimg);
+    // copyimg = document.getElementById(data);
+    copyimg.setAttribute("id", original.id);
+  } else {
+    event.target.append(document.getElementById(data));
+    console.log(document.getElementById(data));
+  }
+  // console.log(original.id);
+  // console.log(copyimg.src);
 };
 
 const holders = document.getElementsByClassName("holder");
