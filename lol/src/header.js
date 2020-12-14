@@ -9,55 +9,73 @@ function Header() {
           <ul>
             <li>
               <a href="https://dak.gg/pubg">
-                <img src={require("../src/iconimg/pubg.png")} />
+                <img
+                  src={require("../src/iconimg/pubg.png")}
+                  alt="배틀그라운드"
+                />
                 배틀그라운드
               </a>
             </li>
             <li>
               <a href="https://dak.gg/warzone">
-                <img src={require("../src/iconimg/wz.png")} />
+                <img src={require("../src/iconimg/wz.png")} alt="워존" />
                 워존
               </a>
             </li>
             <li>
               <a href="https://dak.gg/valorant">
-                <img src={require("../src/iconimg/valo.png")} />
+                <img src={require("../src/iconimg/valo.png")} alt="발로란트" />
                 발로란트
               </a>
             </li>
             <li>
               <a href="https://poro.gg/wildrift">
-                <img src={require("../src/iconimg/wildlift.png")} />
+                <img
+                  src={require("../src/iconimg/wildlift.png")}
+                  alt="와일드리프트"
+                />
                 와일드 리프트
               </a>
             </li>
             <li>
               <a href="https://poro.gg/">
-                <img src={require("../src/iconimg/lol.png")} />
+                <img
+                  src={require("../src/iconimg/lol.png")}
+                  alt="리그오브레전드"
+                />
                 리그오브레전드
               </a>
             </li>
             <li>
               <a href="https://lolchess.gg/">
-                <img src={require("../src/iconimg/tft.png")} />
+                <img
+                  src={require("../src/iconimg/tft.png")}
+                  alt="전략적 팀 전투"
+                />
                 전략적 팀 전투
               </a>
             </li>
             <li>
               <a href="https://lor.poro.gg/ko">
-                <img src={require("../src/iconimg/rune.png")} />
+                <img src={require("../src/iconimg/rune.png")} alt="룬테라" />
                 룬테라
               </a>
             </li>
             <li>
               <a href="https://dak.gg/apex">
-                <img src={require("../src/iconimg/apex.png")} />
+                <img
+                  src={require("../src/iconimg/apex.png")}
+                  alt="에이펙스레전드"
+                />
                 에이펙스레전드
               </a>
             </li>
             <li>
               <a href="https://maple.gg/">
-                <img src={require("../src/iconimg/maple.png")} />
+                <img
+                  src={require("../src/iconimg/maple.png")}
+                  alt="메이플스토리"
+                />
                 메이플스토리
               </a>
             </li>

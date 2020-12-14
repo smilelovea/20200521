@@ -20,19 +20,7 @@ function Chessboard() {
               onDragStart={dragStart}
               onDragEnd={dragEnd}
               key={i}
-            >
-              {/* {i < 0 ? (
-                <div
-                  className="box"
-                  draggable="true"
-                  onDrop={onDrop_prevent}
-                  id={i}
-                  onDragStart={onDragStart_box}
-                />
-              ) : (
-                ""
-              )} */}
-            </div>
+            ></div>
           ))}
       </div>
     </div>
@@ -95,8 +83,8 @@ function Champbox() {
 }
 
 const onDragStart_box = (event) => {
+  console.log(event.target);
   event.dataTransfer.setData("image", event.target.id);
-  const data = event.dataTransfer.getData("image");
 };
 
 const onDrop_prevent = (event) => {
@@ -123,25 +111,21 @@ const onDrop_handler = (event) => {
 };
 
 const dropCopy = (event) => {
-  // event.preventDefault();
+  event.preventDefault();
   const data = event.dataTransfer.getData("image");
-  let original = document.getElementById(data);
-  let copyimg = document.createElement("img");
+  // copyimg.src = original.src;
   if (data) {
-    event.dataTransfer.setData("image", document.getElementById(data));
-
-    copyimg.src = original.src;
-
-    console.log(copyimg.src);
+    let original = document.getElementById(data);
+    let copyimg = original.cloneNode(true);
     event.target.append(copyimg);
-    // copyimg = document.getElementById(data);
+
     copyimg.setAttribute("id", original.id);
+
+    console.log(copyimg.id);
   } else {
-    event.target.append(document.getElementById(data));
-    console.log(document.getElementById(data));
+    event.dataTransfer.setData("image", event.target.firstElementChild);
+    event.target.append(event.dataTransfer.getData("image"));
   }
-  // console.log(original.id);
-  // console.log(copyimg.src);
 };
 
 const holders = document.getElementsByClassName("holder");
