@@ -119,12 +119,9 @@ const dropCopy = (event) => {
     let copyimg = original.cloneNode(true);
     event.target.append(copyimg);
 
-    copyimg.setAttribute("id", original.id);
-
     console.log(copyimg.id);
-  } else {
-    event.dataTransfer.setData("image", event.target.firstElementChild);
-    event.target.append(event.dataTransfer.getData("image"));
+  } else if (!data) {
+    console.log("없음");
   }
 };
 
@@ -143,7 +140,7 @@ const dragStart = (event) => {
       .filter((element) => element.firstChild == null)
       .forEach((element) => (element.style.backgroundColor = "#cccccc"));
 
-    console.log(event.target.id);
+    console.log(event.target);
     event.currentTarget.classList.remove("over");
   } else {
     event.preventDefault();
