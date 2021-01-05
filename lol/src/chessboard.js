@@ -7,7 +7,11 @@ import "./chessboard.css";
 function Chessboard() {
   return (
     <div className="container">
-      <div className="chessboard">
+      <div
+        className="chessboard"
+        draggable="false"
+        onDragStart={onDragStart_box}
+      >
         {Array(28)
           .fill()
           .map((_, i) => (
@@ -52,7 +56,7 @@ function Champbox() {
           {Array(58)
             .fill()
             .map((_, i) => (
-              <div className="champ" key={i} onDrop={dropCopy}>
+              <div className="champ" key={i}>
                 <img
                   src={require(`../src/img/img (${i + 1}).png`)}
                   alt="champ"
@@ -84,6 +88,7 @@ function Champbox() {
 
 const onDragStart_box = (event) => {
   console.log(event.target);
+  console.log("start");
   event.dataTransfer.setData("image", event.target.id);
 };
 
@@ -113,16 +118,16 @@ const onDrop_handler = (event) => {
 const dropCopy = (event) => {
   event.preventDefault();
   const data = event.dataTransfer.getData("image");
-  // copyimg.src = original.src;
-  if (data) {
-    let original = document.getElementById(data);
-    let copyimg = original.cloneNode(true);
+  let original = document.getElementById(data);
+  let copyimg = original.cloneNode(true);
+  if (original.id !== "copyimg") {
     event.target.append(copyimg);
-
-    console.log(copyimg.id);
-  } else if (!data) {
-    console.log("없음");
+    copyimg.id = "copyimg";
+  } else {
+    event.target.append(document.getElementById(data));
+    console.log(document.getElementById(data));
   }
+  console.log(event.currentTarget);
 };
 
 const holders = document.getElementsByClassName("holder");
