@@ -120,9 +120,9 @@ const dropCopy = (event) => {
   const data = event.dataTransfer.getData("image");
   let original = document.getElementById(data);
   let copyimg = original.cloneNode(true);
-  if (original.id !== "copyimg") {
+  if (original.id.length < 3) {
     event.target.append(copyimg);
-    copyimg.id = "copyimg";
+    copyimg.id = "copyimg" + `${copyimg.id}`;
   } else {
     event.target.append(document.getElementById(data));
     console.log(document.getElementById(data));
