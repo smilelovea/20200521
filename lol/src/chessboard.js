@@ -9,8 +9,8 @@ function Chessboard() {
     <div className="container">
       <div
         className="chessboard"
-        draggable="false"
         onDragStart={onDragStart_box}
+        onDrop={onDrop_prevent}
       >
         {Array(28)
           .fill()
@@ -123,11 +123,12 @@ const dropCopy = (event) => {
   if (original.id.length < 3) {
     event.target.append(copyimg);
     copyimg.id = "copyimg" + `${copyimg.id}`;
+  } else if (event.target.id) {
+    event.preventDefault();
+    event.stopPropagation();
   } else {
     event.target.append(document.getElementById(data));
-    console.log(document.getElementById(data));
   }
-  console.log(event.currentTarget);
 };
 
 const holders = document.getElementsByClassName("holder");
