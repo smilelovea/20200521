@@ -24,6 +24,7 @@ function Chessboard() {
               onDragStart={dragStart}
               onDragEnd={dragEnd}
               key={i}
+              id={"board" + i}
             ></div>
           ))}
       </div>
@@ -102,9 +103,6 @@ const onDrop_handler = (event) => {
   const data = event.dataTransfer.getData("image");
   console.log(data);
 
-  const boxFirstChild = event.target.firstElementChild;
-  const boxLastChild = event.target.lastChild;
-
   if (data) {
     event.target.append(document.getElementById(data));
     console.log(document.getElementById(data));
@@ -120,14 +118,22 @@ const dropCopy = (event) => {
   const data = event.dataTransfer.getData("image");
   let original = document.getElementById(data);
   let copyimg = original.cloneNode(true);
+  const holderclass = document.getElementsByClassName("holder");
+  let boxFirstChild = event.target.firstChild;
+  let boxLastChild = event.target.lastChild;
   if (original.id.length < 3) {
     event.target.append(copyimg);
-    copyimg.id = "copyimg" + `${copyimg.id}`;
-  } else if (event.target.id) {
+    console.log(event.target.firstChild);
+    copyimg.id = "copyimg" + event.target.id;
+    console.log("1");
+  } else if (event.target.nodeName == "IMG") {
+    console.log(event.target);
     event.preventDefault();
     event.stopPropagation();
   } else {
     event.target.append(document.getElementById(data));
+    document.getElementById(data).id = "copyimg" + event.target.id;
+    console.log(event.target.nodeName);
   }
 };
 
